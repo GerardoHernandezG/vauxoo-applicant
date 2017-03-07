@@ -35,55 +35,32 @@ CREATE TABLE employee_hobby_employee (
 --INSERT DATA INTO employee_department
   
 INSERT INTO employee_department(name, description)
-    VALUES ('Computing', 'Computing and Technical Support Department');
-INSERT INTO employee_department(name, description)
-    VALUES ('Human Resources', 'Human Resources Department');
-INSERT INTO employee_department(name, description)
-    VALUES ('Administration', 'Administration Department');
-INSERT INTO employee_department(name, description)
-    VALUES ('Marketing', 'Marketing Department');
-INSERT INTO employee_department(name, description)
-    VALUES ('Finance', 'Department of Finance');
-INSERT INTO employee_department(name, description)
-    VALUES ('Management', 'Management of the company');
+    VALUES ('Computing', 'Computing and Technical Support Department'),
+           ('Human Resources', 'Human Resources Department'),
+           ('Administration', 'Administration Department'),
+           ('Marketing', 'Marketing Department'),
+           ('Finance', 'Department of Finance'),
+           ('Management', 'Management of the company');
 	
 --INSERT DATA INTO employee	
 
 INSERT INTO employee(first_name, last_name, department_id, boss)
-    VALUES ('Gerardo', 'Hernandez', 1, 4);
-INSERT INTO employee(first_name, last_name, department_id, boss)
-    VALUES ('Jorge', 'Gonzalez', 2, 4);
-INSERT INTO employee(first_name, last_name, department_id, boss)
-    VALUES ('Pedro', 'Perez', 2, 3);
-INSERT INTO employee(first_name, last_name, department_id, boss)
-    VALUES ('Juan', 'Lopez', 6, 4);
+    VALUES ('Gerardo', 'Hernandez', 1, 4),
+     	   ('Jorge', 'Gonzalez', 2, 4),
+           ('Pedro', 'Perez', 2, 3),
+           ('Juan', 'Lopez', 6, 4);
 
 --INSERT DATA INTO employee_hobby	
 
 INSERT INTO employee_hobby (name, description)
-	VALUES ('Video Games', 'Enjoy Playing video games like console games or pc games');
-INSERT INTO employee_hobby (name, description)
-	VALUES ('Exercise', 'Spend time doing exercise like running or training at gym');
-INSERT INTO employee_hobby (name, description)
-	VALUES ('Listen Music', 'Enjoy Listening to music');
+	VALUES ('Video Games', 'Enjoy Playing video games like console games or pc games'),
+	       ('Exercise', 'Spend time doing exercise like running or training at gym'),
+	       ('Listen Music', 'Enjoy Listening to music');
 
---INSERT DATA INTO employee_hobby_employee	
+--INSERT DATA INTO employee_hobby_employee (relation)
 
 INSERT INTO employee_hobby_employee (id_employee, id_hobby)
-	VALUES (1, 2);
-INSERT INTO employee_hobby_employee (id_employee, id_hobby)
-	VALUES (1, 3);
-INSERT INTO employee_hobby_employee (id_employee, id_hobby)
-	VALUES (2, 1);
-INSERT INTO employee_hobby_employee (id_employee, id_hobby)
-	VALUES (2, 3);
-INSERT INTO employee_hobby_employee (id_employee, id_hobby)
-	VALUES (3, 1);
-INSERT INTO employee_hobby_employee (id_employee, id_hobby)
-	VALUES (3, 2);
-INSERT INTO employee_hobby_employee (id_employee, id_hobby)
-	VALUES (4, 2);
-INSERT INTO employee_hobby_employee (id_employee, id_hobby)
-	VALUES (4, 3);
+	VALUES (1, 2), (1, 3), (2, 1), (2, 3), (3, 1), (3, 2),
+	       (4, 2), (4, 3);
 
 -- ...
