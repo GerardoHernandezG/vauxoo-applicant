@@ -15,7 +15,8 @@ CREATE TABLE employee (
     id          SERIAL,
     first_name  VARCHAR(20) NOT NULL,
     last_name   VARCHAR(20) NOT NULL,
-    department_id int REFERENCES employee_department(id) NOT NULL    
+    department_id int REFERENCES employee_department(id) NOT NULL,
+    boss INT REFERENCES employee NOT NULL   
 );
 
 CREATE TABLE employee_hobby (
@@ -48,14 +49,14 @@ INSERT INTO employee_department(name, description)
 	
 --INSERT DATA INTO employee	
 
-INSERT INTO employee(first_name, last_name, department_id)
-    VALUES ('Gerardo', 'Hernandez', 1);
-INSERT INTO employee(first_name, last_name, department_id)
-    VALUES ('Jorge', 'Gonzalez', 2);
-INSERT INTO employee(first_name, last_name, department_id)
-    VALUES ('Pedro', 'Perez', 2);
-INSERT INTO employee(first_name, last_name, department_id)
-    VALUES ('Juan', 'Lopez', 6);
+INSERT INTO employee(first_name, last_name, department_id, boss)
+    VALUES ('Gerardo', 'Hernandez', 1, 4);
+INSERT INTO employee(first_name, last_name, department_id, boss)
+    VALUES ('Jorge', 'Gonzalez', 2, 4);
+INSERT INTO employee(first_name, last_name, department_id, boss)
+    VALUES ('Pedro', 'Perez', 2, 3);
+INSERT INTO employee(first_name, last_name, department_id, boss)
+    VALUES ('Juan', 'Lopez', 6, 4);
 
 --INSERT DATA INTO employee_hobby	
 
