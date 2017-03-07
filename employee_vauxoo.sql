@@ -18,6 +18,19 @@ CREATE TABLE employee (
     department_id int REFERENCES employee_department(id) NOT NULL    
 );
 
+CREATE TABLE employee_hobby (
+    PRIMARY KEY (id),
+    id          SERIAL,
+    name        VARCHAR(40) NOT NULL,
+    description TEXT        NOT NULL
+);
+
+CREATE TABLE employee_hobby_employee (
+	PRIMARY KEY (id_employee, id_hobby),     
+    id_employee INT REFERENCES employee (id)       NOT NULL,
+    id_hobby    INT REFERENCES employee_hobby (id) NOT NULL
+);
+
 --INSERT DATA INTO employee_department
   
 INSERT INTO employee_department(name, description)
@@ -44,7 +57,32 @@ INSERT INTO employee(first_name, last_name, department_id)
 INSERT INTO employee(first_name, last_name, department_id)
     VALUES ('Juan', 'Lopez', 6);
 
-CREATE TABLE employee_hobby (
-);
+--INSERT DATA INTO employee_hobby	
+
+INSERT INTO employee_hobby (name, description)
+	VALUES ('Video Games', 'Enjoy Playing video games like console games or pc games');
+INSERT INTO employee_hobby (name, description)
+	VALUES ('Exercise', 'Spend time doing exercise like running or training at gym');
+INSERT INTO employee_hobby (name, description)
+	VALUES ('Listen Music', 'Enjoy Listening to music');
+
+--INSERT DATA INTO employee_hobby_employee	
+
+INSERT INTO employee_hobby_employee (id_employee, id_hobby)
+	VALUES (1, 2);
+INSERT INTO employee_hobby_employee (id_employee, id_hobby)
+	VALUES (1, 3);
+INSERT INTO employee_hobby_employee (id_employee, id_hobby)
+	VALUES (2, 1);
+INSERT INTO employee_hobby_employee (id_employee, id_hobby)
+	VALUES (2, 3);
+INSERT INTO employee_hobby_employee (id_employee, id_hobby)
+	VALUES (3, 1);
+INSERT INTO employee_hobby_employee (id_employee, id_hobby)
+	VALUES (3, 2);
+INSERT INTO employee_hobby_employee (id_employee, id_hobby)
+	VALUES (4, 2);
+INSERT INTO employee_hobby_employee (id_employee, id_hobby)
+	VALUES (4, 3);
 
 -- ...
