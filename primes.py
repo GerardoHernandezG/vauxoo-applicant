@@ -28,5 +28,3 @@ class PrimeClass(object):
                     if num_int % num == 0:
                         return False
                 return True
-    num_int = int(raw_input('Ingresa un numero: '))
-    print is_prime('', num_int)
